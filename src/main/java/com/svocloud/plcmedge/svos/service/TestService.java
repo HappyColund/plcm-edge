@@ -15,5 +15,5 @@ public interface TestService {
 	 String SERVICE_ADDRESS="TestService-eb-addr";
 	 
 	 @Fluent//no blocked
-	 void insert(String sql,JsonObject document,Handler<AsyncResult<JsonObject>> result );
+	 void insert(String sql,JsonObject document,Handler<AsyncResult<Void>> result );
 }

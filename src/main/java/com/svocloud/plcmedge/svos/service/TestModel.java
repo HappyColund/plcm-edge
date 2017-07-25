@@ -1,4 +1,4 @@
-package com.svocloud.plcmedge.svos.model;
+package com.svocloud.plcmedge.svos.service;
 
 import java.math.BigDecimal;
 import java.util.Date;
