@@ -14,6 +14,7 @@ import io.vertx.core.http.HttpServer;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.Router;
 import io.vertx.ext.web.RoutingContext;
+import io.vertx.ext.web.handler.BodyHandler;
 import io.vertx.ext.web.handler.CookieHandler;
 import io.vertx.ext.web.handler.CorsHandler;
 import io.vertx.ext.web.handler.SessionHandler;
@@ -49,6 +50,7 @@ public abstract class RestVerticle extends BaseVerticle {
 		allowMethods.add(HttpMethod.DELETE);
 		allowMethods.add(HttpMethod.PATCH);
 		router.route().handler(CorsHandler.create("*").allowedHeaders(allowHeaders).allowedMethods(allowMethods));
+		router.route().handler(BodyHandler.create());
 	}
 
 	/**
