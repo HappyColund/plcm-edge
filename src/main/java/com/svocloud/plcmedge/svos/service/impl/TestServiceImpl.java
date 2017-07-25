@@ -16,7 +16,8 @@ public class TestServiceImpl extends JdbcRepositoryWrapper implements TestServic
 	}
 
 	@Override
-	public void insert(String sql, JsonObject document, Handler<AsyncResult<JsonObject>> result) {
+	public void insert(String sql, JsonObject document, Handler<AsyncResult<Void>> result) {
+		// TODO Auto-generated method stub
 		
 	}
 
