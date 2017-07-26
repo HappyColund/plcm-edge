@@ -13,16 +13,16 @@ public class APIRouter {
 	public Router wrapRouter(Router router){
 		
 		/** DMA handle*/
-		router.get("").handler(dMAService::test);
-		router.post("").handler(dMAService::test);
-		router.put("").handler(dMAService::test);
-		router.delete("").handler(dMAService::test);
+		router.get("/").handler(dMAService::test);
+		router.post("/").handler(dMAService::test);
+		router.put("/").handler(dMAService::test);
+		router.delete("/").handler(dMAService::test);
 		
 		/** RM handle*/
-		router.get("").handler(rMService::test);
-		router.post("").handler(rMService::test);
-		router.put("").handler(rMService::test);
-		router.delete("").handler(rMService::test);
+		router.get("/").handler(rMService::test);
+		router.post("/").handler(rMService::test);
+		router.put("/").handler(rMService::test);
+		router.delete("/").handler(rMService::test);
 		
 		return router;
 	}

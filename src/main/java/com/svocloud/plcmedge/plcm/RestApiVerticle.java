@@ -5,9 +5,7 @@ import com.svocloud.plcmedge.verticle.RestVerticle;
 import io.vertx.core.Future;
 import io.vertx.ext.web.Router;
 
-public class RestApiVerticle extends RestVerticle {
-
-
+public class RestApiVerticle extends RestVerticle{
 	@Override
 	public void start(Future<Void> future) throws Exception {
 		// 注册服务
@@ -20,4 +18,6 @@ public class RestApiVerticle extends RestVerticle {
 		createHttpServer(router, "localhost", 8080).compose(serverPublish -> publishHttpEndpoint("plcm-rest-api", "localhost", 8888))
 				.setHandler(future.completer());
 	}
+
+	
 }
