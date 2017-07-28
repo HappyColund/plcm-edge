@@ -3,8 +3,8 @@ package com.svocloud.plcmedge.plcm.model;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-
 import com.svocloud.plcmedge.enums.LayoutEnum;
+import com.svocloud.plcmedge.utils.FieldSetUtils;
 import com.svocloud.plcmedge.utils.StringUtils;
 
 public class Conference {
@@ -15,10 +15,10 @@ public class Conference {
 	private String dialInNumber;
 	
 	/** 会议室(room)id*/
-	private String roomId;
+	private String conferenceRoomIdentifier;
 	
 	/** 会议id*/
-	private String id;
+	private String conferenceIdentifier;
 	
 	/** 会议所在mcu名字*/
 	private String mcuName;
@@ -77,21 +77,6 @@ public class Conference {
 	
 	private PlcmInternalParams plcmInternalParams;
 	
-	private final static int ID_MAX_VALUE=128;
-	/*private final static int CURRENTLAYOUT_MAX_VALUE=128;
-	private final static int SUPPORTEDLAYOUT_MAX_VALUE=128;*/
-	private final static int ENTITYTAG_MAX_VALUE=64;
-	private final static int PASSTHRU_MAX_VALUE=512;
-	private final static int PASSBACK_MAX_VALUE=512;
-	private final static int HOSTNAME_MAX_VALUE=128;
-	private final static int OWNERLASTNAME_MAX_VALUE=64;
-	private final static int OWNERFIRSTNAME_MAX_VALUE=64;
-	private final static int CASCADEMCUNAME_MAX_VALUE=128;
-	private final static int MCUNAME_MAX_VALUE=128;
-	private final static int ROOMID_MAX_VALUE=128;
-	private final static int DIALINNUMBER_MAX_VALUE=128;
-	private final static int MIN_VALUE=1;
-	
 	public String getUuid() {
 		return uuid;
 	}
@@ -99,108 +84,62 @@ public class Conference {
 		this.uuid = uuid;
 		return this;
 	}
+	
+	public String getConferenceIdentifier() {
+		return conferenceIdentifier;
+	}
+	public Conference setConferenceIdentifier(String conferenceIdentifier) {
+		this.conferenceIdentifier = FieldSetUtils.setField(this, conferenceIdentifier, 128);
+		return this;
+	}
 	public String getDialInNumber() {
 		return dialInNumber;
 	}
 	public Conference setDialInNumber(String dialInNumber) {
-		if(StringUtils.isEmpty(dialInNumber)){
-			throw new RuntimeException("会议dialInNumber不能为空");
-		}
-		if(dialInNumber.length()>DIALINNUMBER_MAX_VALUE||dialInNumber.length()<MIN_VALUE){
-			throw new RuntimeException("会议dialInNumber长度不合法");
-		}
-		this.dialInNumber = dialInNumber;
+		this.dialInNumber = FieldSetUtils.setField(this, dialInNumber, 128);
 		return this;
 	}
-	public String getRoomId() {
-		return roomId;
+	
+	public String getConferenceRoomIdentifier() {
+		return conferenceRoomIdentifier;
 	}
-	public Conference setRoomId(String roomId) {
-		if(StringUtils.isEmpty(roomId)){
-			throw new RuntimeException("会议roomId不能为空");
-		}
-		if(roomId.length()>ROOMID_MAX_VALUE||roomId.length()<MIN_VALUE){
-			throw new RuntimeException("会议roomId长度不合法");
-		}
-		this.roomId = roomId;
-		return this;
-	}
-	public String getId() {
-		return id;
-	}
-	public Conference setId(String id) {
-		if(StringUtils.isEmpty(id)){
-			throw  new RuntimeException("会议id不能为空");
-		}
-		if(id.length()>ID_MAX_VALUE||id.length()<MIN_VALUE){
-			throw  new RuntimeException("会议id长度不合法");
-		}
-		this.id = id;
+	public Conference setConferenceRoomIdentifier(String conferenceRoomIdentifier) {
+		this.conferenceRoomIdentifier = FieldSetUtils.setField(this, conferenceRoomIdentifier, 128);
 		return this;
 	}
 	public String getMcuName() {
 		return mcuName;
 	}
 	public Conference setMcuName(String mcuName) {
-		if(StringUtils.isEmpty(mcuName)){
-			throw new RuntimeException("会议mcuName不能为空");
-		}
-		if(mcuName.length()>MCUNAME_MAX_VALUE||mcuName.length()<MIN_VALUE){
-			throw new RuntimeException("会议mcuName长度不合法");
-		}
-		this.mcuName = mcuName;
+		this.mcuName = FieldSetUtils.setField(this, mcuName, 0);
 		return this;
 	}
 	public String getCascadeMcuName() {
 		return cascadeMcuName;
 	}
 	public Conference setCascadeMcuName(String cascadeMcuName) {
-		if(StringUtils.isEmpty(cascadeMcuName)){
-			throw new RuntimeException("会议cascadeMcuName不能为空");
-		}
-		if(cascadeMcuName.length()>CASCADEMCUNAME_MAX_VALUE||cascadeMcuName.length()<MIN_VALUE){
-			throw new RuntimeException("会议cascadeMcuName长度不合法");
-		}
-		this.cascadeMcuName = cascadeMcuName;
+		this.cascadeMcuName = FieldSetUtils.setField(this, cascadeMcuName, 128);
 		return this;
 	}
 	public String getOwnerFirstName() {
 		return ownerFirstName;
 	}
 	public Conference setOwnerFirstName(String ownerFirstName) {
-		if(StringUtils.isEmpty(cascadeMcuName)){
-			throw new RuntimeException("会议ownerFirstName不能为空");
-		}
-		if(ownerFirstName.length()>OWNERFIRSTNAME_MAX_VALUE||ownerFirstName.length()<MIN_VALUE){
-			throw new RuntimeException("会议ownerFirstName长度不合法");
-		}
-		this.ownerFirstName = ownerFirstName;
+		this.ownerFirstName = FieldSetUtils.setField(this, ownerFirstName, 64);
 		return this;
 	}
 	public String getOwnerLastName() {
 		return ownerLastName;
 	}
 	public Conference setOwnerLastName(String ownerLastName) {
-		if(StringUtils.isEmpty(ownerLastName)){
-			throw new RuntimeException("会议ownerLastName不能为空");
-		}
-		if(ownerLastName.length()>OWNERLASTNAME_MAX_VALUE||ownerLastName.length()<MIN_VALUE){
-			throw new RuntimeException("会议ownerLastName长度不合法");
-		}
-		this.ownerLastName = ownerLastName;
+		this.ownerLastName = FieldSetUtils.setField(this, ownerLastName, 64);
 		return this;
 	}
 	public String getHostName() {
 		return hostName;
 	}
 	public Conference setHostName(String hostName) {
-		if(StringUtils.isEmpty(hostName)){
-			throw new RuntimeException("会议hostName不能为空");
-		}
-		if(hostName.length()>HOSTNAME_MAX_VALUE||hostName.length()<MIN_VALUE){
-			throw new RuntimeException("会议hostName长度不合法");
-		}
-		this.hostName = hostName;
+		this.hostName = FieldSetUtils.setField(this, hostName, 128);
 		return this;
 	}
 	public boolean isRecordingActive() {
@@ -221,30 +160,21 @@ public class Conference {
 		return passBack;
 	}
 	public Conference setPassBack(String passBack) {
-		if(passBack.length()>PASSBACK_MAX_VALUE||passBack.length()<MIN_VALUE){
-			throw new RuntimeException("会议passBack长度不合法");
-		}
-		this.passBack = passBack;
+		this.passBack = FieldSetUtils.setField(this, passBack, 512);
 		return this;
 	}
 	public String getPassThru() {
 		return passThru;
 	}
 	public Conference setPassThru(String passThru) {
-		if(passThru.length()>PASSTHRU_MAX_VALUE||passThru.length()<MIN_VALUE){
-			throw new RuntimeException("会议passThru长度不合法");
-		}
-		this.passThru = passThru;
+		this.passThru = FieldSetUtils.setField(this, passThru, 512);
 		return this;
 	}
 	public String getEntityTag() {
 		return entityTag;
 	}
 	public Conference setEntityTag(String entityTag) {
-		if(entityTag.length()>ENTITYTAG_MAX_VALUE||entityTag.length()<MIN_VALUE){
-			throw new RuntimeException("会议entityTag长度不合法");
-		}
-		this.entityTag = entityTag;
+		this.entityTag = FieldSetUtils.setField(this, entityTag, 512);
 		return this;
 	}
 	public boolean isLocked() {
@@ -279,9 +209,7 @@ public class Conference {
 		return startTime;
 	}
 	public Conference setStartTime(LocalDateTime startTime) {
-		if(startTime==null){
-			throw new RuntimeException("会议开始时间不能为空");
-		}
+		if(startTime==null) throw new RuntimeException("Conference对象中：startTime属性不能设置为空");
 		this.startTime = startTime;
 		return this;
 	}
@@ -303,7 +231,6 @@ public class Conference {
 		return currentLayout;
 	}
 	public Conference setCurrentLayout(LayoutEnum currentLayout) {
-		this.currentLayout = currentLayout;
 		return this;
 	}
 	public List<PlcmCascadeLink> getPlcmCascadeLinkList() {
@@ -329,7 +256,7 @@ public class Conference {
 	}
 	@Override
 	public String toString() {
-		return "Conference [uuid=" + uuid + ", dialInNumber=" + dialInNumber + ", roomId=" + roomId + ", id=" + id
+		return "Conference [uuid=" + uuid + ", dialInNumber=" + dialInNumber + ", roomId=" + roomId + ", conferenceIdentifier=" + conferenceIdentifier
 				+ ", mcuName=" + mcuName + ", cascadeMcuName=" + cascadeMcuName + ", ownerFirstName=" + ownerFirstName
 				+ ", ownerLastName=" + ownerLastName + ", hostName=" + hostName + ", recordingActive=" + recordingActive
 				+ ", displayText=" + displayText + ", passBack=" + passBack + ", passThru=" + passThru + ", entityTag="

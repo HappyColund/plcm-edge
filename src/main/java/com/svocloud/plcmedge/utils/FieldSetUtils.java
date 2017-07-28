@@ -1,6 +1,6 @@
 package com.svocloud.plcmedge.utils;
 
-public class FieldCheckUtils {
+public class FieldSetUtils {
 
 	/***
 	 * 

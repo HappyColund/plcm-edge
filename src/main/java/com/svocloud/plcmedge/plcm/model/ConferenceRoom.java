@@ -3,9 +3,7 @@ package com.svocloud.plcmedge.plcm.model;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.svocloud.plcmedge.utils.FieldCheckUtils;
-import com.svocloud.plcmedge.utils.StringUtils;
+import com.svocloud.plcmedge.utils.FieldSetUtils;
 
 public class ConferenceRoom {
 
@@ -69,28 +67,28 @@ public class ConferenceRoom {
 		return ownerFirstName;
 	}
 	public ConferenceRoom setOwnerFirstName(String ownerFirstName) {
-		this.ownerFirstName = FieldCheckUtils.setField(this, ownerFirstName, 64);
+		this.ownerFirstName = FieldSetUtils.setField(this, ownerFirstName, 64);
 		return this;
 	}
 	public String getOwnerLastName() {
 		return ownerLastName;
 	}
 	public ConferenceRoom setOwnerLastName(String ownerLastName) {
-		this.ownerLastName = FieldCheckUtils.setField(this, ownerLastName, 64);
+		this.ownerLastName = FieldSetUtils.setField(this, ownerLastName, 64);
 		return this;
 	}
 	public String getOwnerDomain() {
 		return ownerDomain;
 	}
 	public ConferenceRoom setOwnerDomain(String ownerDomain) {
-		this.ownerDomain = FieldCheckUtils.setField(this, ownerDomain, 0);
+		this.ownerDomain = FieldSetUtils.setField(this, ownerDomain, 0);
 		return this;
 	}
 	public String getOwnerUsername() {
 		return ownerUsername;
 	}
 	public ConferenceRoom setOwnerUsername(String ownerUsername) {
-		this.ownerUsername = FieldCheckUtils.setField(this, ownerUsername, 0);
+		this.ownerUsername = FieldSetUtils.setField(this, ownerUsername, 0);
 		return this;
 	}
 	public int getDurationInMinutes() {
@@ -104,7 +102,7 @@ public class ConferenceRoom {
 		return conferenceRoomIdentifier;
 	}
 	public ConferenceRoom setConferenceRoomIdentifier(String conferenceRoomIdentifier) {
-		this.conferenceRoomIdentifier = FieldCheckUtils.setField(this, conferenceRoomIdentifier, 128);
+		this.conferenceRoomIdentifier = FieldSetUtils.setField(this, conferenceRoomIdentifier, 128);
 		return this;
 	}
 	public String getDialInNumber() {
@@ -118,7 +116,7 @@ public class ConferenceRoom {
 		return conferenceTemplateName;
 	}
 	public ConferenceRoom setConferenceTemplateName(String conferenceTemplateName) {
-		this.conferenceTemplateName = FieldCheckUtils.setField(this, conferenceTemplateName, 50);
+		this.conferenceTemplateName = FieldSetUtils.setField(this, conferenceTemplateName, 50);
 		return this;
 	}
 	public int getMaxParticipants() {
@@ -153,7 +151,7 @@ public class ConferenceRoom {
 		return chairpersonCode;
 	}
 	public ConferenceRoom setChairpersonCode(String chairpersonCode) {
-		this.chairpersonCode = FieldCheckUtils.setField(this, chairpersonCode, 16);
+		this.chairpersonCode = FieldSetUtils.setField(this, chairpersonCode, 16);
 		return this;
 	}
 	public boolean isChairpersonCodeUseAsAlias() {
@@ -167,7 +165,7 @@ public class ConferenceRoom {
 		return conferenceCode;
 	}
 	public ConferenceRoom setConferenceCode(String conferenceCode) {
-		this.conferenceCode = FieldCheckUtils.setField(this, conferenceCode, 16);
+		this.conferenceCode = FieldSetUtils.setField(this, conferenceCode, 16);
 		return this;
 	}
 	public boolean isConferenceCodeUseAsAlias() {
@@ -181,21 +179,21 @@ public class ConferenceRoom {
 		return entityTag;
 	}
 	public ConferenceRoom setEntityTag(String entityTag) {
-		this.entityTag = FieldCheckUtils.setField(this, entityTag, 64);
+		this.entityTag = FieldSetUtils.setField(this, entityTag, 64);
 		return this;
 	}
 	public String getPassback() {
 		return passback;
 	}
 	public ConferenceRoom setPassback(String passback) {
-		this.passback = FieldCheckUtils.setField(this, passback, 512);
+		this.passback = FieldSetUtils.setField(this, passback, 512);
 		return this;
 	}
 	public String getPassthru() {
 		return passthru;
 	}
 	public ConferenceRoom setPassthru(String passthru) {
-		this.passthru = FieldCheckUtils.setField(this, passthru, 512);
+		this.passthru = FieldSetUtils.setField(this, passthru, 512);
 		return this;
 	}
 	public boolean isAutoDialOut() {
@@ -209,14 +207,14 @@ public class ConferenceRoom {
 		return resourcePriorityNamespace;
 	}
 	public ConferenceRoom setResourcePriorityNamespace(String resourcePriorityNamespace) {
-		this.resourcePriorityNamespace = FieldCheckUtils.setField(this, resourcePriorityNamespace, 62);
+		this.resourcePriorityNamespace = FieldSetUtils.setField(this, resourcePriorityNamespace, 62);
 		return this;
 	}
 	public String getResourcePriorityValue() {
 		return resourcePriorityValue;
 	}
 	public ConferenceRoom setResourcePriorityValue(String resourcePriorityValue) {
-		this.resourcePriorityValue = FieldCheckUtils.setField(this, resourcePriorityValue, 64);
+		this.resourcePriorityValue = FieldSetUtils.setField(this, resourcePriorityValue, 64);
 		return this;
 	}
 	public boolean isFirstCallerMcuAffinity() {
@@ -244,14 +242,14 @@ public class ConferenceRoom {
 		return focusUri;
 	}
 	public ConferenceRoom setFocusUri(String focusUri) {
-		this.focusUri = FieldCheckUtils.setField(this, focusUri, 512);
+		this.focusUri = FieldSetUtils.setField(this, focusUri, 512);
 		return this;
 	}
 	public String getLyncRegisteredDomain() {
 		return lyncRegisteredDomain;
 	}
 	public ConferenceRoom setLyncRegisteredDomain(String lyncRegisteredDomain) {
-		this.lyncRegisteredDomain = FieldCheckUtils.setField(this, lyncRegisteredDomain, 128);
+		this.lyncRegisteredDomain = FieldSetUtils.setField(this, lyncRegisteredDomain, 128);
 		return this;
 	}
 	public LocalDateTime getNotBefore() {
