@@ -13,10 +13,7 @@ public class APIRouter {
 	public Router wrapRouter(Router router){
 		
 		/** DMA handle*/
-		router.get("/").handler(dMAService::test);
-		router.post("/").handler(dMAService::test);
-		router.put("/").handler(dMAService::test);
-		router.delete("/").handler(dMAService::test);
+		router.get("/plcm/api/rest").handler(rMService::test);
 		
 		/** RM handle*/
 		router.get("/").handler(rMService::test);

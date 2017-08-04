@@ -1,8 +1,14 @@
 package com.svocloud.plcmedge.plcm.service;
 
-import io.vertx.ext.web.RoutingContext;
+import java.util.List;
+import com.svocloud.plcmedge.plcm.model.ConferenceRoom;
 
 public interface DMAService {
 	
-	void test(RoutingContext context);
+	boolean createConferenceRoom();
+	ConferenceRoom getConferenceRoom();
+	ConferenceRoom updateConferenceRoom();
+	ConferenceRoom deleteConferenceRoom();
+	List<ConferenceRoom> getConferenceRooms();
+	
 }

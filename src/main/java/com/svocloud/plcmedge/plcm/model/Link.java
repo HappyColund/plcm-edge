@@ -34,8 +34,8 @@ public class Link {
 		return type;
 	}
 	public Link setType(String type) {
-		Matcher matcher = Pattern.compile(".+//.+").matcher(type);
-		if(!matcher.matches()) throw new RuntimeException("Link实体： type属性不符合正则表达式");
+		/*Matcher matcher = Pattern.compile(".+//.+").matcher(type);
+		if(!matcher.matches()) throw new RuntimeException("Link实体： type属性不符合正则表达式");*/
 		this.type = type;
 		return this;
 	}

@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 import com.svocloud.plcmedge.enums.LayoutEnum;
 import com.svocloud.plcmedge.utils.FieldSetUtils;
-import com.svocloud.plcmedge.utils.StringUtils;
 
 public class Conference {
 	
@@ -253,18 +252,6 @@ public class Conference {
 	public Conference setPlcmInternalParams(PlcmInternalParams plcmInternalParams) {
 		this.plcmInternalParams = plcmInternalParams;
 		return this;
-	}
-	@Override
-	public String toString() {
-		return "Conference [uuid=" + uuid + ", dialInNumber=" + dialInNumber + ", roomId=" + roomId + ", conferenceIdentifier=" + conferenceIdentifier
-				+ ", mcuName=" + mcuName + ", cascadeMcuName=" + cascadeMcuName + ", ownerFirstName=" + ownerFirstName
-				+ ", ownerLastName=" + ownerLastName + ", hostName=" + hostName + ", recordingActive=" + recordingActive
-				+ ", displayText=" + displayText + ", passBack=" + passBack + ", passThru=" + passThru + ", entityTag="
-				+ entityTag + ", supportedLayouts=" + supportedLayouts + ", currentLayout=" + currentLayout
-				+ ", isLocked=" + isLocked + ", joinNewCallsMuted=" + joinNewCallsMuted + ", focusUri=" + focusUri
-				+ ", callCount=" + callCount + ", startTime=" + startTime + ", endTime=" + endTime
-				+ ", plcmCascadeLinkList=" + plcmCascadeLinkList + ", atomLinkList=" + atomLinkList
-				+ ", plcmInternalParams=" + plcmInternalParams + "]";
 	}
 	
 }

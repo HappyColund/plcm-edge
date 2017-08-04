@@ -1,6 +1,5 @@
 package com.svocloud.plcmedge.plcm.model;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import com.svocloud.plcmedge.utils.FieldSetUtils;
@@ -40,8 +39,8 @@ public class ConferenceRoom {
 	private boolean overrideLastDisconnect;
 	private String focusUri;
 	private String lyncRegisteredDomain;
-	private LocalDateTime notBefore;
-	private LocalDateTime notAfter;
+	private String notBefore;
+	private String notAfter;
 	public List<Link> getAtomLinkList() {
 		return atomLinkList;
 	}
@@ -252,19 +251,38 @@ public class ConferenceRoom {
 		this.lyncRegisteredDomain = FieldSetUtils.setField(this, lyncRegisteredDomain, 128);
 		return this;
 	}
-	public LocalDateTime getNotBefore() {
+	public String getNotBefore() {
 		return notBefore;
 	}
-	public ConferenceRoom setNotBefore(LocalDateTime notBefore) {
+	public ConferenceRoom setNotBefore(String notBefore) {
 		this.notBefore = notBefore;
 		return this;
 	}
-	public LocalDateTime getNotAfter() {
+	public String getNotAfter() {
 		return notAfter;
 	}
-	public ConferenceRoom setNotAfter(LocalDateTime notAfter) {
+	public ConferenceRoom setNotAfter(String notAfter) {
 		this.notAfter = notAfter;
 		return this;
+	}
+	@Override
+	public String toString() {
+		return "ConferenceRoom [atomLinkList=" + atomLinkList + ", plcmConferenceRoomAliasList="
+				+ plcmConferenceRoomAliasList + ", plcmDialOutParticipant=" + plcmDialOutParticipant
+				+ ", ownerFirstName=" + ownerFirstName + ", ownerLastName=" + ownerLastName + ", ownerDomain="
+				+ ownerDomain + ", ownerUsername=" + ownerUsername + ", durationInMinutes=" + durationInMinutes
+				+ ", conferenceRoomIdentifier=" + conferenceRoomIdentifier + ", dialInNumber=" + dialInNumber
+				+ ", conferenceTemplateName=" + conferenceTemplateName + ", maxParticipants=" + maxParticipants
+				+ ", mcuPoolOrderName=" + mcuPoolOrderName + ", territoryName=" + territoryName
+				+ ", chairpersonRequired=" + chairpersonRequired + ", chairpersonCode=" + chairpersonCode
+				+ ", chairpersonCodeUseAsAlias=" + chairpersonCodeUseAsAlias + ", conferenceCode=" + conferenceCode
+				+ ", conferenceCodeUseAsAlias=" + conferenceCodeUseAsAlias + ", entityTag=" + entityTag + ", passback="
+				+ passback + ", passthru=" + passthru + ", autoDialOut=" + autoDialOut + ", resourcePriorityNamespace="
+				+ resourcePriorityNamespace + ", resourcePriorityValue=" + resourcePriorityValue
+				+ ", firstCallerMcuAffinity=" + firstCallerMcuAffinity + ", confRoomPublishable=" + confRoomPublishable
+				+ ", overrideLastDisconnect=" + overrideLastDisconnect + ", focusUri=" + focusUri
+				+ ", lyncRegisteredDomain=" + lyncRegisteredDomain + ", notBefore=" + notBefore + ", notAfter="
+				+ notAfter + "]";
 	}
 	
 	
