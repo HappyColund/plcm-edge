@@ -12,8 +12,20 @@ public class APIRouter {
 	
 	public Router wrapRouter(Router router){
 		
-		/** DMA handle*/
-		router.get("/plcm/api/rest").handler(rMService::test);
+		router.get("/plcm/api/rest/mcus").handler(null);
+		router.get("/plcm/api/rest/mcus/mcu-identifier").handler(null);
+		
+		router.get("/plcm/api/rest/mcu-pools").handler(null);
+		router.get("/plcm/api/rest/mcu-pools/mcu-pool-identifier").handler(null);
+		
+		router.get("/plcm/api/rest/mcu-pool-orders").handler(null);
+		router.get("/plcm/api/rest/mcu-pool-orders/mcu-pool-order-identifier").handler(null);
+		
+		router.get("/plcm/api/rest/conference-rooms").handler(null);
+		router.post("/plcm/api/rest/conference-rooms").handler(null);
+		router.get("/plcm/api/rest/conference-rooms/conference-room-identifier").handler(null);
+		router.put("/plcm/api/rest/conference-rooms/conference-room-identifier").handler(null);
+		router.delete("/plcm/api/rest/conference-rooms/conference-room-identifier").handler(null);
 		
 		/** RM handle*/
 		router.get("/").handler(rMService::test);

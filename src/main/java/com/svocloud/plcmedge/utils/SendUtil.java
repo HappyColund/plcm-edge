@@ -23,7 +23,6 @@ public class SendUtil {
         log.info("请求路径 url:" + context.request().absoluteURI());
         log.info("请求参数 body:" + context.getBodyAsString());
         log.info("请求方法 method:" + context.request().method().name());
-        log.info("请求token  token:" + context.request().getHeader("token"));
         context.response().setStatusCode(result.getCode()).putHeader("content-type", "application/json").end(JSON.toJSONString(result));
         log.info("返回数据 result:" + JSON.toJSONString(result));
 

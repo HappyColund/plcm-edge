@@ -138,6 +138,7 @@ public abstract class RestVerticle extends BaseVerticle {
 	 * @return generated handler
 	 */
 	protected <T> Handler<AsyncResult<T>> resultHandler(RoutingContext context, Function<T, String> converter) {
+		System.out.println("******"+context);
 		return ar -> {
 			if (ar.succeeded()) {
 				T res = ar.result();

@@ -1,6 +1,6 @@
 package com.svocloud.plcmedge.commons;
 
 public class Constants {
-	private Constants(){}
 	
+	public  final static String  MCU_LIST = "https://172.18.7.162:8443/api/rest/mcus";
 }

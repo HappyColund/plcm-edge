@@ -44,7 +44,7 @@ import org.apache.http.util.EntityUtils;
  * 支持：get/post/delete/put请求
  *
  */
-public class HttpsClientUtils {
+public class HttpsClientUtils  {
 
     private static HttpHost targetHost = null;
     private static HttpClientContext context = null;
@@ -106,6 +106,7 @@ public class HttpsClientUtils {
             	httpGet.setHeader(entry.getKey(), entry.getValue());
             }  
         }  
+        //CloseableHttpResponse response = sslClient().execute(httpGet,context);
         CloseableHttpResponse response = sslClient().execute(httpGet,context);
         HttpEntity entity = response.getEntity(); 
         String result="";
