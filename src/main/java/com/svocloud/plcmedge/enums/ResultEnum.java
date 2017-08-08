@@ -5,7 +5,8 @@ public enum ResultEnum {
 	SUCCESS(200,"Success",200),
 	BAD_REQUEST(400, "Bad Request",400),
 	NOT_FOUND(404,"Not Found",404),
-	INTERNAL_ERROR(503,"Service Unavailable",503);
+	INTERNAL_ERROR(503,"Service Unavailable",503),
+	PARAMNOTFOUNT(400, "Missing Necessary Parameter", 400);
 	
 	private int code;
 	private String msg;

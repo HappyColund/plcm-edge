@@ -9,7 +9,7 @@ public class PlcmMcu extends ObjectBase implements Serializable{
 	 */
 	private static final long serialVersionUID = -7507871284245453208L;
 	
-	private String plcmMcuCapacity;
+	private PlcmMcuCapacity plcmMcuCapacity;
 	private String mcuIdentifier;
 	private String name;
 	private String managementIp;
@@ -27,10 +27,13 @@ public class PlcmMcu extends ObjectBase implements Serializable{
 	private boolean supportsSVC;
 	private String passback;
 	private String entityTag;
-	public String getPlcmMcuCapacity() {
+	
+	
+	
+	public PlcmMcuCapacity getPlcmMcuCapacity() {
 		return plcmMcuCapacity;
 	}
-	public void setPlcmMcuCapacity(String plcmMcuCapacity) {
+	public void setPlcmMcuCapacity(PlcmMcuCapacity plcmMcuCapacity) {
 		this.plcmMcuCapacity = plcmMcuCapacity;
 	}
 	public String getMcuIdentifier() {

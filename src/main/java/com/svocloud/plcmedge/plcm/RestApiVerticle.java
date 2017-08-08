@@ -1,18 +1,11 @@
 package com.svocloud.plcmedge.plcm;
 
-import com.hazelcast.config.Config;
 import com.svocloud.plcmedge.plcm.service.DMAService;
 import com.svocloud.plcmedge.plcm.service.impl.DMAServiceImpl;
-import com.svocloud.plcmedge.utils.Runner;
 import com.svocloud.plcmedge.verticle.RestVerticle;
-
-import io.vertx.core.DeploymentOptions;
 import io.vertx.core.Future;
 import io.vertx.core.Vertx;
-import io.vertx.core.VertxOptions;
-import io.vertx.core.json.Json;
 import io.vertx.ext.web.Router;
-import io.vertx.ext.web.RoutingContext;
 
 public class RestApiVerticle extends RestVerticle{
 	
@@ -20,7 +13,10 @@ public class RestApiVerticle extends RestVerticle{
 	
 	private DMAService dMAService;
 	
-	private final String API_MCU_RETRIEVE_ALL="/mcus";
+	private final String API_MCU_RETRIEVE_ALL="/api/rest/mcus";
+	private final String API_MCU_RETRIEVE_NOE="/api/rest/mcus/:id";
+	private final String API_CONFERENCE_START="/api/rest/conferences/:id/startConference";
+	private final String API_RECORD_START="/api/rest/conferences/:id/startRecord";
 	
 	public RestApiVerticle(DMAService dMAService){
 		this.dMAService=dMAService;
@@ -33,15 +29,17 @@ public class RestApiVerticle extends RestVerticle{
 		final Router router = Router.router(vertx);
 		enableCorsSupport(router);
 		// create HTTP server and publish REST service
-		router.get(API_MCU_RETRIEVE_ALL).handler(this::mcuRetrieveAll);
+		router.get(API_MCU_RETRIEVE_ALL).handler(dMAService::mcuRetrieveAll);
+		router.get(API_MCU_RETRIEVE_NOE).handler(dMAService::mcuRetrieveOne);
+		//开始会议
+		router.post(API_CONFERENCE_START).handler(dMAService::startConference);
+		//开始录制
+		router.post(API_RECORD_START).handler(dMAService::startRecord);
 	    createHttpServer(router, "localhost", 8080)
 	      .compose(serverCreated -> publishHttpEndpoint(SERVICE_NAME, "localhost", 8080))
 	      .setHandler(future.completer());
 	}
 	
-	private void mcuRetrieveAll(RoutingContext routingContext){
-		dMAService.getMcus(routingContext);
-	}
 	
 	public static void main(String[] args) {
 		//Runner.run(RestApiVerticle.class, new VertxOptions(), new DeploymentOptions());
