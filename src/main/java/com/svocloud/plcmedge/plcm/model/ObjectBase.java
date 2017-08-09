@@ -11,8 +11,9 @@ public abstract class ObjectBase {
 		return atomLinkList;
 	}
 
-	public void setAtomLinkList(List<Link> atomLinkList) {
+	public ObjectBase setAtomLinkList(List<Link> atomLinkList) {
 		this.atomLinkList = atomLinkList;
+		return this;
 	}
 	
 }

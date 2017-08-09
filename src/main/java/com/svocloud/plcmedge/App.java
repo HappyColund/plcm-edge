@@ -9,8 +9,5 @@ import com.svocloud.plcmedge.utils.PropertiesUtils;
 public class App {
 	
 	public static void main(String[] args) throws Exception {
-		
-		String property = PropertiesUtils.getProperty("DMA_HOST");
-		System.out.println(property);
 	}
 }

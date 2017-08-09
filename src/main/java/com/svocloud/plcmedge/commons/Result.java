@@ -25,7 +25,6 @@ public class Result {
 		this.code = ResultEnum.SUCCESS.getCode();
 		this.msg = ResultEnum.SUCCESS.getMsg();
 		this.httpStatus = ResultEnum.SUCCESS.getHttpStatusCode();
-		System.out.println(JSON.toJSONString(object));
 		this.data = object;
 	}
 

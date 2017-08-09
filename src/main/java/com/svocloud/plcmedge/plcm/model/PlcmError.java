@@ -17,6 +17,7 @@ public class PlcmError implements Serializable {
 	private int detailedErrorCode;
 	private String localizationKey;
 	private List<String> localizationParam = new ArrayList<String>();
+	
 	public int getStatusCode() {
 		return statusCode;
 	}
