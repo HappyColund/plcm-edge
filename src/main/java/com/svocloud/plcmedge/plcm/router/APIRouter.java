@@ -27,7 +27,7 @@ public class APIRouter {
 		router.put("/plcm/api/rest/conference-rooms/conference-room-identifier").handler(null);
 		router.delete("/plcm/api/rest/conference-rooms/conference-room-identifier").handler(null);
 		
-		/** RM handle*/
+		/** RM handle ss */
 		router.get("/").handler(rMService::test);
 		router.post("/").handler(rMService::test);
 		router.put("/").handler(rMService::test);
